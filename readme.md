@@ -1,5 +1,7 @@
 # Docker Compose Setup for WordPress and MySQL
 
+![Wordpress-docker-container](https://github.com/user-attachments/assets/65134df8-3150-4ed3-b47b-a2348bb1b21c)
+
 This repository contains a Docker Compose setup for running a WordPress site along with a MySQL database and phpMyAdmin for database management.
 
 ## Table of Content
