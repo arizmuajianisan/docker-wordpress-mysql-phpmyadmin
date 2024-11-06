@@ -2,13 +2,14 @@
 
 This repository contains a Docker Compose setup for running a WordPress site along with a MySQL database and phpMyAdmin for database management.
 
-## Services
+## Table of Content
 
-- **WordPress**: A popular content management system (CMS) that allows you to create and manage websites easily.
-- **MySQL**: A relational database management system used to store and manage your WordPress data.
-- **phpMyAdmin**: A web-based interface for managing MySQL databases, making it easier to interact with your database.
+1. Setup
+2. Operation Wordpress
+   - Backup
+   - Restore
 
-## Getting Started
+## Setup
 
 1. **Clone the Repository** :rocket:
 
@@ -63,5 +64,32 @@ To stop the services, run:
 ```bash
 docker-compose down
 ```
+
+## Move the Project from Dev to Production
+
+**WARNING**
+Make sure you already run the Wordpress on the production server and completed the instalation.
+
+We will use the plugin UpdraftPlus: WP Backup & Migration Plugin.
+This plugin need to installed on both Development WP and Production WP.
+
+Step to perform:
+   On the Wordpress Development:
+     1. Do the full backup:
+        - Database
+        - Plugins
+        - Themes
+        - Uploads
+        - Others
+     2. Download all the backup file
+     3. Copy to your Production Server
+
+   On the Wordpress Production:
+      1. Go to UdraftPlus setting area
+      2. Upload the backup files
+      3. Restore with it
+   After the process is completed, you will need to login using the credentials from Development WP.
+
+
 
 This README provides a basic overview of how to set up and run the Docker Compose file for WordPress and MySQL.
