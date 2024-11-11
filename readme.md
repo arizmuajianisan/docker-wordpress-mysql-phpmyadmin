@@ -70,7 +70,7 @@ docker-compose down
 
 ## Move the Project from Dev to Production
 
-**WARNING**
+**WARNING** :warning:
 
 Make sure you already run the Wordpress on the production server and completed the instalation.
 
@@ -80,23 +80,24 @@ This plugin need to installed on both Development WP and Production WP.
 
 Step to perform:
 
-   On the Wordpress Development:
+*On the Wordpress Development*
 
-     1. Do the full backup:
-        - Database
-        - Plugins
-        - Themes
-        - Uploads
-        - Others
-     2. Download all the backup file
-     3. Copy to your Production Server
+Do the full backups, all the component need to exported.
 
-   On the Wordpress Production:
+   - Database
+   - Plugins
+   - Themes
+   - Uploads
+   - Others
+  1. Download all the backup file
+  2. Copy to your Production Server
 
-      1. Go to UdraftPlus setting area
-      2. Upload the backup files
-      3. Restore with it
+On the Wordpress Production:
 
-   After the process is completed, you will need to login using the credentials from Development WP.
+   3. Go to UdraftPlus setting area
+   4. Upload the backup files
+   5. Restore with it
+
+After the process is completed, you will need to login using the credentials from Development WP.
 
 This README provides a basic overview of how to set up and run the Docker Compose file for WordPress and MySQL.
