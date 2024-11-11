@@ -11,6 +11,9 @@ This repository contains a Docker Compose setup for running a WordPress site alo
   - [Setup](#setup)
   - [Stopping the Services](#stopping-the-services)
   - [Move the Project from Dev to Production](#move-the-project-from-dev-to-production)
+    - [Steps to Perform:](#steps-to-perform)
+      - [On the WordPress Development Site:](#on-the-wordpress-development-site)
+      - [On the WordPress Production Site:](#on-the-wordpress-production-site)
 
 ## Setup
 
@@ -72,32 +75,33 @@ docker-compose down
 
 **WARNING** :warning:
 
-Make sure you already run the Wordpress on the production server and completed the instalation.
+Ensure that you have already run WordPress on the production server and completed the installation.
 
-We will use the plugin UpdraftPlus: WP Backup & Migration Plugin.
+To migrate your WordPress site from development to production, we will use the UpdraftPlus: WP Backup & Migration Plugin. This plugin needs to be installed on both the Development and Production WordPress instances.
 
-This plugin need to installed on both Development WP and Production WP.
+### Steps to Perform:
 
-Step to perform:
+#### On the WordPress Development Site:
 
-*On the Wordpress Development*
-
-Do the full backups, all the component need to exported.
-
+1. **Create Full Backups**: Use UpdraftPlus to back up all components:
    - Database
    - Plugins
    - Themes
    - Uploads
-   - Others
-  1. Download all the backup file
-  2. Copy to your Production Server
+   - Other files
 
-On the Wordpress Production:
+2. **Download Backup Files**: After the backup is complete, download all backup files to your local machine.
 
-   3. Go to UdraftPlus setting area
-   4. Upload the backup files
-   5. Restore with it
+3. **Transfer Backup Files**: Copy the downloaded backup files to your Production Server using a secure method (e.g., SCP, FTP).
 
-After the process is completed, you will need to login using the credentials from Development WP.
+#### On the WordPress Production Site:
+
+4. **Access UpdraftPlus Settings**: Log in to your Production WordPress site and navigate to the UpdraftPlus settings area.
+
+5. **Upload Backup Files**: Use the upload feature to import the backup files you transferred.
+
+6. **Restore the Site**: Follow the prompts to restore your site using the uploaded backup files.
+
+After the restoration process is complete, log in using the credentials from your Development WordPress site.
 
 This README provides a basic overview of how to set up and run the Docker Compose file for WordPress and MySQL.
