@@ -1,6 +1,5 @@
 # Exclude .env
 *.env
-*.bat
 
 # Exclude mounted volumes
 wordpress/
