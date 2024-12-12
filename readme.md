@@ -14,6 +14,9 @@ This repository contains a Docker Compose setup for running a WordPress site alo
     - [Steps to Perform:](#steps-to-perform)
       - [On the WordPress Development Site:](#on-the-wordpress-development-site)
       - [On the WordPress Production Site:](#on-the-wordpress-production-site)
+  - [Password Management Scripts](#password-management-scripts)
+    - [Windows Users (.bat files)](#windows-users-bat-files)
+    - [Linux/Mac Users (.sh files)](#linuxmac-users-sh-files)
 
 ## Setup
 
@@ -103,5 +106,43 @@ To migrate your WordPress site from development to production, we will use the U
 6. **Restore the Site**: Follow the prompts to restore your site using the uploaded backup files.
 
 After the restoration process is complete, log in using the credentials from your Development WordPress site.
+
+## Password Management Scripts
+
+The project includes several utility scripts for managing MySQL passwords securely:
+
+### Windows Users (.bat files)
+
+- `generate_root_password.bat`: Generates a new random root password and updates it in the `.env` file
+- `generate_user_password.bat`: Generates a new random user password and updates it in the `.env` file
+
+To use:
+1. Double-click the desired .bat file
+2. The script will automatically:
+   - Generate a secure random password using OpenSSL
+   - Update the corresponding entry in your `.env` file
+   - Display the new password in the console
+3. Press any key to close the window
+
+### Linux/Mac Users (.sh files)
+
+- `generate_root_password.sh`: Generates a new random root password and updates it in the `.env` file
+
+To use:
+1. Make the script executable (first time only):
+   ```bash
+   chmod +x generate_root_password.sh
+   ```
+2. Run the script:
+   ```bash
+   ./generate_root_password.sh
+   ```
+3. The script will:
+   - Generate a secure random password using OpenSSL
+   - Update the corresponding entry in your `.env` file
+   - Display the new password in the console
+4. Press Enter to close
+
+> **Note**: These scripts require OpenSSL to be installed on your system. The scripts will modify your `.env` file directly, so make sure to backup any sensitive data before running them.
 
 This README provides a basic overview of how to set up and run the Docker Compose file for WordPress and MySQL.
